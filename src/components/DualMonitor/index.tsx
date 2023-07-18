@@ -7,7 +7,6 @@ import { BsGpuCard as GpuIcon } from 'react-icons/bs'
 import { FaTemperatureLow as TempIcon } from 'react-icons/fa'
 import { VscPulse as LoadIcon } from 'react-icons/vsc'
 
-import { Progress } from 'components/Progress'
 
 export const DualMonitor = () => {
   const { cpu, gpu } = useMonitoring()
@@ -15,18 +14,18 @@ export const DualMonitor = () => {
   const Cpu = () => (
     <div className="info-container">
       <div className="info-title">
-        <CpuIcon size={28} />
-        <span>{cpu?.name?.replace(/core/gi, '')}</span>
+        <CpuIcon size={30} />
+        <span className="info-label">{cpu?.name?.replace(/core/gi, '')}</span>
       </div>
       <div className="info-data">
         <div className="info-icon">
-          <TempIcon size={22} />
+          <TempIcon className="icon-color" size={32} />
         </div>
         <div className="data">{cpu?.tempeture}°</div>
       </div>
       <div className="info-data">
         <div className="info-icon">
-          <LoadIcon size={22} />
+          <LoadIcon className="icon-color" size={32} />
         </div>
         <div className="data">
           {cpu?.load}
@@ -39,18 +38,18 @@ export const DualMonitor = () => {
   const Gpu = () => (
     <div className="info-container">
       <div className="info-title">
-        <GpuIcon size={28} />
-        <span>{gpu?.name?.replace(/nvidia geforce/gi, '')}</span>
+        <GpuIcon size={30} />
+        <span className="info-label">{gpu?.name?.replace(/nvidia geforce/gi, '')}</span>
       </div>
       <div className="info-data">
         <div className="info-icon">
-          <TempIcon size={22} />
+          <TempIcon className="icon-color" size={32} />
         </div>
         <div className="data">{gpu?.tempeture}°</div>
       </div>
       <div className="info-data">
         <div className="info-icon">
-          <LoadIcon size={22} />
+          <LoadIcon className="icon-color" size={32} />
         </div>
         <div className="data">
           {gpu?.load}
@@ -62,20 +61,11 @@ export const DualMonitor = () => {
 
   return (
     <Container>
-      <Progress
-        size={320}
-        lineWidth={26}
-        leftValue={cpu?.tempeture}
-        rightValue={gpu?.tempeture}
-        leftColor={'#8800ff'}
-        rightColor={'#00bbff'}
-      >
         <div className="monitoring">
           <Cpu />
           <div className="info-separator"></div>
           <Gpu />
         </div>
-      </Progress>
     </Container>
   )
 }

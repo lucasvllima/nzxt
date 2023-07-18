@@ -17,7 +17,7 @@ export const Container = styled.div`
     justify-content: center;
     width: inherit;
     height: inherit;
-    gap: 25px;
+    gap: 5px;
   }
 
   .info-container {
@@ -27,21 +27,28 @@ export const Container = styled.div`
   }
 
   .info-separator {
-    height: 20%;
+    height: 100%;
     width: 1px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 0, 0, 1);
   }
 
   .info-title {
     display: flex;
     flex-direction: column;
+    color: red;
     align-items: center;
     justify-content: center;
+    font-size: 1.6em;
     gap: 5px;
     margin-bottom: 10px;
 
     span {
     }
+  }
+
+  .info-label {
+    color: white;
+    font-size: 0.7em
   }
 
   .info-container div:nth-child(2) div:nth-child(1) {
@@ -55,7 +62,7 @@ export const Container = styled.div`
   .info-data {
     display: flex;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 5.7rem;
 
     .info-icon {
       display: flex;
@@ -63,7 +70,7 @@ export const Container = styled.div`
       justify-content: center;
 
       svg {
-        margin-right: 5px;
+        margin-right: 1px;
       }
     }
 
@@ -76,5 +83,9 @@ export const Container = styled.div`
         font-size: 1.8rem;
       }
     }
+  }
+
+  .icon-color {
+    color: red;
   }
 `
